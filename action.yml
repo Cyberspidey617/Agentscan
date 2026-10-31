@@ -1,5 +1,6 @@
-name: "agentscan"
+name: "Agentscan MCP & AI Skill Security Scanner"
 description: "Scan MCP server configs and AI agent skills for prompt injection, tool poisoning, secrets and risky commands"
+author: "Alby Mathew Biju"
 branding:
   icon: "shield"
   color: "red"
