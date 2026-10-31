@@ -1,0 +1,32 @@
+name: "agentscan"
+description: "Scan MCP server configs and AI agent skills for prompt injection, tool poisoning, secrets and risky commands"
+branding:
+  icon: "shield"
+  color: "red"
+inputs:
+  path:
+    description: "File or directory to scan"
+    default: "."
+  fail-on:
+    description: "Fail the job at or above this severity (low, medium, high, critical, none)"
+    default: "high"
+  upload-sarif:
+    description: "Upload results to GitHub code scanning"
+    default: "true"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - shell: bash
+      run: pip install "${{ github.action_path }}"
+    - shell: bash
+      run: |
+        agentscan "${{ inputs.path }}" --format sarif -o agentscan.sarif --fail-on none
+        agentscan "${{ inputs.path }}" --fail-on "${{ inputs.fail-on }}"
+    - if: always() && inputs.upload-sarif == 'true'
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: agentscan.sarif
+        category: agentscan

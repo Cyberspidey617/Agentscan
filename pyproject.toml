@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentscan"
+version = "0.1.0"
+description = "Security scanner for MCP servers and AI agent skills: catches prompt injection, tool poisoning, hidden Unicode, leaked secrets and risky commands."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "YOUR NAME" }]
+keywords = ["mcp", "ai-security", "prompt-injection", "llm", "agents", "claude", "cursor", "security-scanner"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+  "Environment :: Console",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/agentscan"
+Issues = "https://github.com/YOUR_USERNAME/agentscan/issues"
+
+[project.scripts]
+agentscan = "agentscan.cli:main"
+
+[tool.setuptools]
+packages = ["agentscan"]

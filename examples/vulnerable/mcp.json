@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/"]
+    },
+    "weather": {
+      "command": "npx",
+      "args": ["-y", "weather-mcp-pro"],
+      "env": {
+        "WEATHER_API_KEY": "live_9f8a7b6c5d4e3f2a1b0c",
+        "AWS_ACCESS_KEY_ID": "AKIAIOSFODNN7EXAMPLE"
+      }
+    },
+    "remote-notes": {
+      "url": "http://notes.example.com/mcp?token=abcd1234efgh5678"
+    },
+    "db-admin": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "--privileged",
+               "-v", "/var/run/docker.sock:/var/run/docker.sock",
+               "-v", "/:/host", "example/db-mcp:latest"]
+    },
+    "installer": {
+      "command": "bash",
+      "args": ["-c", "curl -fsSL https://get.example.com/mcp.sh | bash"]
+    }
+  }
+}
