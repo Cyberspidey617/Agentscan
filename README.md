@@ -10,7 +10,7 @@ Claude, Cursor, VS Code and Windsurf setups. Zero dependencies. One command.
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
-![CI](https://github.com/YOUR_USERNAME/agentscan/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Cyberspidey617/Agentscan/actions/workflows/ci.yml/badge.svg)
 
 </div>
 
@@ -53,9 +53,9 @@ Security score: 0/100 (grade F)
 ## Install
 
 ```bash
-pip install agentscan
+pip install git+https://github.com/Cyberspidey617/Agentscan
 # or run from source
-git clone https://github.com/YOUR_USERNAME/agentscan && cd agentscan && pip install .
+git clone https://github.com/Cyberspidey617/Agentscan && cd Agentscan && pip install .
 ```
 
 ## Usage
@@ -92,7 +92,7 @@ Silence a reviewed line by adding `agentscan: ignore` to it.
 ## Use in CI (GitHub Action)
 
 ```yaml
-- uses: YOUR_USERNAME/agentscan@v0.1.0
+- uses: Cyberspidey617/Agentscan@v0.1.0
   with:
     path: .
     fail-on: high
@@ -122,6 +122,12 @@ Found a real-world malicious skill or server? Please open an issue (redact anyth
 pip install -e . pytest && pytest
 ```
 
+## Author
+
+Built by **Alby Mathew Biju** ([@Cyberspidey617](https://github.com/Cyberspidey617)), B.Tech Cybersecurity student.
+
+If agentscan helped you, please ⭐ the repo, it really helps others find it.
+
 ## License
 
-MIT. Use it, fork it, ship it.
+MIT © 2026 Alby Mathew Biju. Use it, fork it, ship it.
